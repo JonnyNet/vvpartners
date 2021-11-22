@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2 col-xs-12 offset-md-2">
+        <app-search-form [value]="search" [inLine]="true" (valueChanges)="valueChanges($event)"></app-search-form>
+    </div>
+    <div class="row mt-4">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users$ | async; index as i" class="user"
+                        (click)="selectUser(user)">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.login }}</td>
+                        <td>{{ user.type }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

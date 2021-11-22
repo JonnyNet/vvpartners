@@ -1,0 +1,13 @@
+:host {
+    width: 100%;
+
+    .no-padding {
+        margin-right: 5px;
+        ::ng-deep {
+            .mat-form-field-wrapper {
+                padding-bottom: 0px;
+                margin: 0px;
+            }
+        }
+    }
+}
