@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12 card" *ngIf="user$ | async as user">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <img class="user-avatar" [src]="user.avatar_url" alt="user-avatar">
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <h3>{{ user.login }}</h3>
+                <div>Name: {{ user.name }}</div>
+                <div>Email: {{ user.email }}</div>
+                <div>Twitter: {{ user.twitter_username }}</div>
+                <div>Location: {{ user.location }}</div>
+                <div>User Type: {{ user.type }}</div>
+                <a [href]="user.html_url" target="_blank">GitHub Profile</a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <google-chart [title]="'Followers'" [type]="myType" [data]="[[user.login, user.followers]]">
+                </google-chart>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<form class="d-flex" [ngClass]="{ 'flex-row justify-content-between align-items-center' : inLine , 'flex-column align-items-center' : !inLine }" (ngSubmit)="searchUsers()">
+    <mat-form-field [ngClass]="{ 'no-padding' : inLine }" appearance="outline">
+        <input type="text" autocomplete="off" placeholder="Search..." matInput [formControl]="search"
+            [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+                {{option}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!search.valid">Search</button>
+</form>
