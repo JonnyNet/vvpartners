@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UserStoreService } from '@app/user/services/user-store.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
-  constructor() { }
+  constructor(private readonly store: UserStoreService) { }
 
-  ngOnInit(): void {
+  valueChanges(text: string): void {
+    this.store.navigateToSearchDetails(text);
   }
-
 }

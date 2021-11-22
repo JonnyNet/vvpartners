@@ -1,22 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="toolbar" role="banner">
-      <div class="container">
-        <!-- <img class="toolbar-logo" src="assets/img/toolbar-logo.png" alt=""> -->
-        <i class="fa-brands fa-github"></i>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div
-      class="col-md-8 offset-md-2 col-xs-12 offset-md-2 d-flex flex-column align-items-center  min-vh-100 justify-content-center">
-      <form class="d-flex flex-column align-items-center">
-        <img class="search-logo" src="assets/img/github.png" alt="">
-        <input type="text" class="form-control">
-        <div class="mt-3">
-          <button mat-raised-button color="primary">Search</button>
-        </div>
-      </form>
-    </div>
+<div class="home">
+  <div
+    class="col-md-8 offset-md-2 col-xs-12 offset-md-2 d-flex flex-column align-items-center  min-vh-100 justify-content-center">
+    <img class="search-logo" src="assets/img/github.png" alt="">
+    <app-search-form (valueChanges)="valueChanges($event)"></app-search-form>
   </div>
 </div>
