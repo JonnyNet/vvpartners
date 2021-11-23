@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store, UserGitHub, UserStoreModel } from '@app/shared';
+import { Store, UserGitHub, UserStoreModel } from 'app/shared';
 import { debounceTime, filter, map, Observable, switchMap } from 'rxjs';
+import { URLS } from '../constans/urls';
 import { GithubService } from './github.service';
-import { URLS } from '@app/user'
+
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserGitHub } from '@app/shared';
-import { environment } from '@env/environment';
+import { UserGitHub } from 'app/shared';
+import { environment } from 'environments/environment';
 import { map, Observable } from 'rxjs';
 
 @Injectable({

@@ -5,7 +5,10 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jest"
-    ]
+    ],
+    "paths": {
+      "@app/*": ["app/*"]
+    }
   },
   "files": [
     "src/polyfills.ts"

@@ -17,7 +17,7 @@ describe('ErrorService', () => {
   it('should trigger event', done => {
     const service: ErrorService = TestBed.inject(ErrorService);
     service.stateAlert().subscribe(res => {
-      expect(res).toEqual(true);
+      expect(res).toBeTruthy();
       done();
     });
     service.chageStateAlert({

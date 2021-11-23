@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { ErrorService } from '@app/shared/services/error.service';
+import { ErrorService } from 'app/shared/services/error.service';
 import { Observable } from 'rxjs';
 import { UserStoreService } from './user-store.service';
 
