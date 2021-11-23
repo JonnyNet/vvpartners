@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, ValidationErrors, Validators } from '@angular/forms';
-import { UserStoreService } from '@app/user/services/user-store.service';
+import { UserStoreService } from '../../services/user-store.service';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Component({

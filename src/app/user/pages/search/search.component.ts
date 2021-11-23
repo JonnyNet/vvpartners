@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { UserStoreService } from '@app/user/services/user-store.service';
+import { UserStoreService } from 'app/user/services/user-store.service';
+
 
 @Component({
   selector: 'app-search',
