@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserGitHub } from '@app/shared';
-import { UserStoreService } from '@app/user/services/user-store.service';
+import { UserGitHub } from 'app/shared';
+import { UserStoreService } from 'app/user/services/user-store.service';
 import { Observable } from 'rxjs';
 
 @Component({
