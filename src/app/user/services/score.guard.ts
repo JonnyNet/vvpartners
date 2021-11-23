@@ -17,9 +17,9 @@ export class ScoreGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    let validator = true;
+    let validator = false;
     if (this.store.user) {
-      // validator = this.store.user.score <= 30.0;
+      validator = this.store.user.score > 30.0;
     }
 
     if (!validator) {

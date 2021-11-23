@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { SharedModule } from '../shared.module';
 
 import { ErrorService } from './error.service';
 
@@ -6,7 +7,7 @@ describe('ErrorService', () => {
   let service: ErrorService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ imports: [SharedModule] });
     service = TestBed.inject(ErrorService);
   });
 

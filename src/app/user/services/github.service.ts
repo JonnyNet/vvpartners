@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserGitHub } from 'app/shared';
-import { environment } from 'environments/environment';
+import { environment } from '../../../environments/environment';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -20,6 +20,6 @@ export class GithubService {
   }
 
   findUser(userLogin: string): Promise<any> {
-    return fetch(this.gitHub.findUser + userLogin);
+    return (window as any).fetch(this.gitHub.findUser + userLogin);
   }
 }

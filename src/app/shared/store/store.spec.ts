@@ -13,10 +13,10 @@ class TestStore extends Store<AuthState>{
     });
   }
 
-  testState(): void {
+  testState(text: string): void {
     this.setState({
       ...this.state,
-      user: 'test',
+      user: text,
     });
   }
 }
@@ -26,8 +26,12 @@ describe('Store', () => {
     expect(new TestStore()).toBeTruthy();
   });
 
-  it('should test get and test status', () => {
+  it('should test get and test status', done => {
     const store = new TestStore();
-    store.testState();
+    store.testState('test');
+    store.state$.subscribe(res => {
+      expect(res.user).toEqual('test');
+      done();
+    });
   });
 });

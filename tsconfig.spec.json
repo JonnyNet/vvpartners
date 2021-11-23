@@ -3,12 +3,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": [
-      "jest"
+    "types": [ 
+      "jest",
+      "node"
     ],
-    "paths": {
-      "@app/*": ["app/*"]
-    }
+    "module": "commonjs",
   },
   "files": [
     "src/polyfills.ts"

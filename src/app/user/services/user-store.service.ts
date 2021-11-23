@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store, UserGitHub, UserStoreModel } from 'app/shared';
+import { Store, UserGitHub, UserStoreModel } from '../../shared';
 import { debounceTime, filter, map, Observable, switchMap } from 'rxjs';
 import { URLS } from '../constans/urls';
 import { GithubService } from './github.service';
@@ -13,7 +13,7 @@ export class UserStoreService extends Store<UserStoreModel> {
 
   readonly userNames$ = this.state$.pipe(map(x => x.userNames));
   readonly users$ = this.state$.pipe(map(x => x.users));
-  readonly usersChart$ = this.state$.pipe(map(x => x.users));
+  readonly usersChart$ = this.state$.pipe(map(x => x.chart));
   readonly user$ = this.state$.pipe(map(x => x.user));
   readonly user = this.state.user;
 
@@ -47,12 +47,12 @@ export class UserStoreService extends Store<UserStoreModel> {
   searchTextByInput(text: string): void {
     this.gitHabService.searchUsersThatContain(text).subscribe((users: UserGitHub[]) => {
       const chart = users.map(x => [x.login, x.score]);
-      console.log(chart);
       
       this.setState({
         ...this.state,
         userNames: [],
-        users
+        users,
+        chart
       });
     });
   }
